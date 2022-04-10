@@ -1,0 +1,314 @@
+@import "reset.css";
+/* animaion */
+@keyframes 두둥등장 {
+  0% {
+    bottom: -600px;
+    right: 100px;
+  }
+  70% {
+    bottom: -500px;
+    right: 80px;
+  }
+  100% {
+    bottom: -200px;
+    right: 30px;
+  }
+}
+@keyframes 쫑긋쫑긋L {
+  from {
+    transform: rotateY(-20deg) rotateZ(-20deg);
+  }
+  to {
+    transform: rotateY(10deg) rotateZ(-20deg);
+  }
+}
+@keyframes 쫑긋쫑긋R {
+  from {
+    transform: rotateY(20deg) rotateZ(20deg);
+  }
+  to {
+    transform: rotateY(-10deg) rotateZ(20deg);
+  }
+}
+/* setting */
+:root {
+  --pink: #f6d9d6;
+  --skin: #fff;
+  --border: #000;
+  --eye: #cccfd9;
+}
+/* layout */
+/* design */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+  width: 900px;
+  height: 900px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.paper {
+  width: 950px;
+  height: 950px;
+  background-image: url(paper.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+
+.character {
+  position: absolute;
+  transform: rotate(20deg);
+  bottom: -600px;
+  right: 100px;
+  width: 700px;
+  height: 1500px;
+  background-color: #2d3436;
+  animation: 두둥등장 3s infinite alternate;
+}
+/*character wrapper*/
+.maneul {
+  width: 700px;
+  height: 700px;
+  position: relative;
+}
+/*ear*/
+.maneul .ear {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 5px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--skin);
+}
+
+.maneul .earLeft {
+  top: 650px;
+  left: 50px;
+  transform: rotate(-20deg);
+  border-radius: 38% 62% 100% 0% / 63% 100% 0% 37%;
+  animation: 쫑긋쫑긋L 0.7s infinite alternate;
+}
+
+.maneul .earRight {
+  top: 650px;
+  right: 50px;
+  transform: rotate(20deg);
+  border-radius: 67% 33% 0% 100% / 100% 83% 17% 0%;
+  animation: 쫑긋쫑긋R 1s infinite alternate;
+}
+
+.maneul .inEar {
+  position: absolute;
+  top: 0;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background-color: var(--pink);
+}
+
+.maneul .inEarLeft {
+  top: 15px;
+  left: 8px;
+  border-radius: 38% 62% 100% 0% / 63% 100% 0% 37%;
+}
+
+.maneul .inEarRight {
+  top: 15px;
+  right: 8px;
+  border-radius: 67% 33% 0% 100% / 100% 83% 17% 0%;
+}
+/*face*/
+.maneul .face {
+  position: absolute;
+  bottom: -600px;
+  left: 25px;
+  width: 650px;
+  height: 550px;
+  border: 5px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--skin);
+}
+/*eye*/
+.maneul .face .eye {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--eye);
+}
+
+.maneul .face .eyeLeft {
+  top: 100px;
+  left: 100px;
+}
+
+.maneul .face .eyeRight {
+  top: 100px;
+  right: 100px;
+}
+
+.maneul .face .eye .pupil {
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.maneul .face .eye .reflectionWhite {
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+}
+/*nose*/
+.nose {
+  position: absolute;
+  top: 220px;
+  left: 305px;
+  width: 25px;
+  height: 15px;
+  background-color: var(--pink);
+  border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+}
+
+/*nostrils*/
+.nostrils {
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+}
+.nostrils.nostrilsLeft {
+  transform: rotate(-30deg);
+  top: 3px;
+  left: 2px;
+}
+
+.nostrils.nostrilsRight {
+  transform: rotate(30deg);
+  top: 3px;
+  right: 2px;
+}
+/*mouth*/
+.mouth {
+  position: absolute;
+  top: 235px;
+  left: 316.5px;
+  width: 2px;
+  height: 18px;
+  background-color: black;
+  z-index: 1;
+}
+.mouth::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 6px;
+  width: 2px;
+  height: 20px;
+  background-color: black;
+  transform: rotate(140deg);
+  z-index: 1;
+}
+.mouth::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 6px;
+  width: 2px;
+  height: 20px;
+  background-color: black;
+  transform: rotate(40deg);
+  z-index: 1;
+}
+.pinkShadow {
+  position: absolute;
+  top: 20px;
+  right: 1px;
+  border-radius: 50%;
+  background-color: black;
+  box-shadow: 1px 5px 8px 8px var(--pink);
+}
+/*whiskers*/
+.whiskers {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  background-color: black;
+  z-index: 1;
+}
+
+.whiskersLeft {
+  top: 280px;
+  left: 0px;
+  transform: rotate(-10deg);
+}
+
+.whiskersLeft::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 2px;
+  background-color: black;
+  top: 30px;
+  left: 0px;
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+
+.whiskersRight {
+  top: 280px;
+  right: 0px;
+  transform: rotate(10deg);
+}
+
+.whiskersRight::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 2px;
+  background-color: black;
+  top: 30px;
+  right: 0px;
+  transform: rotate(10deg);
+  z-index: 1;
+}
+/*body*/
+.maneul .body {
+  width: 650px;
+  height: 265px;
+  position: absolute;
+  bottom: -600px;
+  left: 25px;
+  border-left: 5px solid var(--border);
+  border-right: 5px solid var(--border);
+  background-color: var(--skin);
+}
