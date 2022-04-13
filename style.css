@@ -16,10 +16,10 @@
 }
 @keyframes 쫑긋쫑긋L {
   from {
-    transform: rotateY(-20deg) rotateZ(-20deg);
+    transform: rotateY(-20deg) rotate(-20deg);
   }
   to {
-    transform: rotateY(10deg) rotateZ(-20deg);
+    transform: rotateY(10deg) rotate(-20deg);
   }
 }
 @keyframes 쫑긋쫑긋R {
@@ -72,7 +72,7 @@ section {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 2;
+  z-index: 10;
 }
 
 .character {
@@ -97,7 +97,6 @@ section {
   width: 200px;
   height: 200px;
   border: 5px solid var(--border);
-  border-radius: 50%;
   background-color: var(--skin);
 }
 
@@ -119,10 +118,8 @@ section {
 
 .maneul .inEar {
   position: absolute;
-  top: 0;
   width: 175px;
   height: 175px;
-  border-radius: 50%;
   background-color: var(--pink);
 }
 
@@ -225,7 +222,7 @@ section {
   width: 2px;
   height: 18px;
   background-color: black;
-  z-index: 1;
+  z-index: 10;
 }
 .mouth::after {
   content: "";
@@ -236,7 +233,7 @@ section {
   height: 20px;
   background-color: black;
   transform: rotate(140deg);
-  z-index: 1;
+  z-index: 10;
 }
 .mouth::before {
   content: "";
@@ -263,7 +260,7 @@ section {
   width: 150px;
   height: 2px;
   background-color: black;
-  z-index: 1;
+  z-index: 10;
 }
 
 .whiskersLeft {
@@ -281,7 +278,6 @@ section {
   top: 30px;
   left: 0px;
   transform: rotate(-10deg);
-  z-index: 1;
 }
 
 .whiskersRight {
@@ -299,7 +295,6 @@ section {
   top: 30px;
   right: 0px;
   transform: rotate(10deg);
-  z-index: 1;
 }
 /*body*/
 .maneul .body {
